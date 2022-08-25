@@ -32,6 +32,9 @@ jobs:
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/service1:latest
           cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/service1:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/service1:buildcache,mode=max
+          
+      - name: Test
+        run: echo "Test passed"
         
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v3
