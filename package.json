@@ -4,7 +4,7 @@
   "repository": "https://github.com/mjercic27/avl1",
   "private": false,
   "release": {
-    "branches": ["main"]
+    "branches": ["main"],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
@@ -16,6 +16,6 @@
       ],
       "@semantic-release/github"
     ]
-    }
+  }
     
 }
