@@ -41,6 +41,10 @@ jobs:
         
       
         
+      - name: Tag
+        run: docker tag ${{ secrets.DOCKER_HUB_USERNAME }}/service1:latest ${{ secrets.DOCKER_HUB_USERNAME }}/service1:${{ steps.semantic.outputs.new_release_version }}
       - name: Push
         run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/service1:${{ steps.semantic.outputs.new_release_version }}
+      - name: Push latest
+        run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/service1:latest
       
