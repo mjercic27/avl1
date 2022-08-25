@@ -1,4 +1,4 @@
-FROM python:latest
+FROM python:3.10-slim-bullseye
 
 
 RUN curl -sL https://github.com/openfaas/faas/releases/download/0.9.14/fwatchdog > /usr/bin/fwatchdog \
