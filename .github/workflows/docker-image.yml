@@ -41,5 +41,5 @@ jobs:
       
         
       - name: Push
-        run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/service1
+        run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/service1:${{ steps.semantic.outputs.new_release_version }}
       
