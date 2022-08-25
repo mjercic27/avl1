@@ -1,4 +1,4 @@
-FROM python:latest
+FROM python:3.11.0rc1-alpine3.15
 
 RUN curl -sL https://github.com/openfaas/faas/releases/download/0.9.14/fwatchdog > /usr/bin/fwatchdog \
     && chmod +x /usr/bin/fwatchdog
