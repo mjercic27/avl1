@@ -17,8 +17,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      
+      - name: Cache
+        uses: satackey/action-docker-layer-caching@v0.0.11
+        continue-on-error: true
+      
       - name: Build 
-        run: docker build --cache-from ${{ secrets.DOCKER_HUB_USERNAME }}/service1:latest -t ${{ secrets.DOCKER_HUB_USERNAME }}/service1 .
+        run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/service1 .
         
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v3
